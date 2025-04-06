@@ -1,0 +1,66 @@
+{
+  "type": "MaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "back": 0,
+        "nlu_fallback": 1,
+        "out_of_scope": 2,
+        "pedir_pizza - consultar_horario - consultar_entrega - consultar_cardapio - consultar_pagamento - consultar_promocao - duvida_geral - alterar_pedido - cancelar_pedido - coletar_endereco - confirmar_pedido - endereco_confirmado - agradecimento": 3,
+        "restart": 4,
+        "session_start": 5
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "utter_pedir_pizza": 13,
+        "utter_consultar_horario": 14,
+        "utter_consultar_entrega": 15,
+        "utter_consultar_cardapio": 16,
+        "utter_consultar_pagamento": 17,
+        "utter_consultar_promocao": 18,
+        "utter_duvida_geral": 19,
+        "utter_alterar_pedido": 20,
+        "utter_cancelar_pedido": 21,
+        "utter_confirmar_pedido": 22,
+        "utter_endereco_confirmado": 23,
+        "utter_agradecimento": 24,
+        "utter_cardapio_completo": 25,
+        "utter_coletar_endereco": 26,
+        "utter_confirmar_entrega": 27,
+        "utter_promocao": 28
+      },
+      "entities": {
+        "bairro": 0,
+        "pagamento": 1,
+        "quantidade": 2,
+        "sabor": 3,
+        "tamanho": 4
+      },
+      "slots": {
+        "sabor_0": 0,
+        "tamanho_0": 1,
+        "bairro_0": 2,
+        "pagamento_0": 3,
+        "pedido_0": 4,
+        "endereço_0": 5
+      },
+      "active_loop": {}
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}

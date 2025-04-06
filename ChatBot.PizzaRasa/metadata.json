@@ -1,0 +1,807 @@
+{
+  "domain": {
+    "version": "3.1",
+    "intents": [
+      "pedir_pizza - consultar_horario - consultar_entrega - consultar_cardapio - consultar_pagamento - consultar_promocao - duvida_geral - alterar_pedido - cancelar_pedido - coletar_endereco - confirmar_pedido - endereco_confirmado - agradecimento"
+    ],
+    "entities": [
+      "sabor",
+      "tamanho",
+      "quantidade",
+      "bairro",
+      "pagamento"
+    ],
+    "slots": {
+      "sabor": {
+        "type": "text",
+        "mappings": [
+          {
+            "type": "from_entity",
+            "entity": "sabor"
+          }
+        ]
+      },
+      "tamanho": {
+        "type": "text",
+        "mappings": [
+          {
+            "type": "from_entity",
+            "entity": "tamanho"
+          }
+        ]
+      },
+      "quantidade": {
+        "type": "any",
+        "mappings": [
+          {
+            "type": "from_entity",
+            "entity": "quantidade"
+          }
+        ]
+      },
+      "bairro": {
+        "type": "text",
+        "mappings": [
+          {
+            "type": "from_entity",
+            "entity": "bairro"
+          }
+        ]
+      },
+      "pagamento": {
+        "type": "text",
+        "mappings": [
+          {
+            "type": "from_entity",
+            "entity": "pagamento"
+          }
+        ]
+      },
+      "pedido": {
+        "type": "text",
+        "mappings": [
+          {
+            "type": "from_entity",
+            "entity": "pedido"
+          }
+        ]
+      },
+      "endereço": {
+        "type": "text",
+        "mappings": [
+          {
+            "type": "from_entity",
+            "entity": "endereço"
+          }
+        ]
+      }
+    },
+    "responses": {
+      "utter_agradecimento": [
+        {
+          "text": "Obrigado pelo pedido! Sua pizza já está sendo preparada! 🍕"
+        }
+      ],
+      "utter_pedir_pizza": [
+        {
+          "text": "Claro! Qual sabor, tamanho e quantidade você gostaria?"
+        }
+      ],
+      "utter_consultar_horario": [
+        {
+          "text": "Funcionamos todos os dias das 18h às 23h! Inclusive feriados! ⏰"
+        }
+      ],
+      "utter_consultar_entrega": [
+        {
+          "text": "Entregamos em vários bairros! Me diz o seu pra eu confirmar."
+        }
+      ],
+      "utter_confirmar_entrega": [
+        {
+          "text": "Sim, entregamos em {bairro}. A taxa é de R$5,00 e o tempo médio de entrega é de 40 minutos. 🚚"
+        }
+      ],
+      "utter_cardapio_completo": [
+        {
+          "text": "🍕 *Cardápio Completo da Pizzaria MoniBot* 🍕\n\n*Pizzas Salgadas:*\n- Calabresa\n  - Pequena (4 fatias) – R$30,00\n  - Média (6 fatias) – R$35,00\n  - Grande (8 fatias) – R$43,00\n  - Família (12 fatias) – R$50,00\n\n- Marguerita\n  - Pequena – R$29,00 | Média – R$34,00 | Grande – R$42,00 | Família – R$49,00\n\n- Frango com Catupiry\n  - Pequena – R$31,00 | Média – R$36,00 | Grande – R$44,00 | Família – R$51,00\n\n- Portuguesa\n  - Pequena – R$32,00 | Média – R$37,00 | Grande – R$45,00 | Família – R$52,00\n\n- Quatro Queijos\n  - Pequena – R$33,00 | Média – R$38,00 | Grande – R$46,00 | Família – R$53,00\n\n- Vegetariana\n  - Pequena – R$30,00 | Média – R$35,00 | Grande – R$43,00 | Família – R$50,00\n\n- Pepperoni\n  - Pequena – R$34,00 | Média – R$39,00 | Grande – R$47,00 | Família – R$54,00\n\n- Napolitana\n  - Pequena – R$29,00 | Média – R$34,00 | Grande – R$42,00 | Família – R$49,00\n\n*Pizzas Doces:*\n- Chocolate com Morango\n  - Pequena – R$33,00 | Média – R$38,00 | Grande – R$46,00 | Família – R$53,00\n\n- Banana com Canela\n  - Pequena – R$27,00 | Média – R$32,00 | Grande – R$40,00 | Família – R$47,00\n\n- Prestígio\n  - Pequena – R$31,00 | Média – R$36,00 | Grande – R$44,00 | Família – R$51,00\n\n- Romeu e Julieta\n  - Pequena – R$28,00 | Média – R$33,00 | Grande – R$41,00 | Família – R$48,00\n\n- Nutella com Morango\n  - Pequena – R$37,00 | Média – R$42,00 | Grande – R$50,00 | Família – R$57,00\n\n*Tamanhos disponíveis:*\n- Pequena – 4 fatias (ideal para 1 pessoa)\n- Média – 6 fatias (serve até 2 pessoas)\n- Grande – 8 fatias (serve até 3 pessoas)\n- Família – 12 fatias (serve até 5 pessoas)\n\n🥤 *Bebidas:*\n- Refrigerante lata – R$6,00\n- Refrigerante 2L – R$10,00\n- Água sem gás – R$3,00\n- Água com gás – R$4,00\n- Suco natural (laranja, uva, abacaxi) – R$7,00\n- Cerveja artesanal – R$12,00\n\n😋 É só me chamar pra fazer seu pedido!\n"
+        }
+      ],
+      "utter_consultar_pagamento": [
+        {
+          "text": "Aceitamos Pix, dinheiro, cartão de crédito e débito. Qual você prefere? 💳"
+        }
+      ],
+      "utter_promocao": [
+        {
+          "text": "🎉 Olha só as promoções imperdíveis que temos hoje! 😍\n1️⃣ **Pizza Família**: Compre uma pizza grande e leve uma de tamanho médio por **50% OFF**.\n2️⃣ **Combo Especial**: Pizza de calabresa + refrigerante por **R$ 39,90**.\n3️⃣ **Desconto para entrega**: Ganhe **10% OFF** na sua entrega se pedir até as 18h!\nTem mais promoções rolando, me avise se quiser mais detalhes. 🤩\n"
+        }
+      ],
+      "utter_duvida_geral": [
+        {
+          "text": "Estamos localizados na Rua das Pizzas, nº 42. Temos salão e delivery! Qual sua dúvida?"
+        }
+      ],
+      "utter_alterar_pedido": [
+        {
+          "text": "Sem problemas! O que você gostaria de alterar no seu pedido? 🍕"
+        }
+      ],
+      "utter_cancelar_pedido": [
+        {
+          "text": "Seu pedido foi cancelado. 😢 Esperamos te ver de volta em breve com mais fome de pizza!"
+        }
+      ],
+      "utter_coletar_endereco": [
+        {
+          "text": "📦 Onde será entregue a sua pizza? Por favor, me envie o seu endereço.\n"
+        }
+      ],
+      "utter_confirmar_pedido": [
+        {
+          "text": "🤔 Então, você pediu uma pizza de {sabor} no tamanho {tamanho} com bebida {pagamento}, certo?\n📦 O seu endereço de entrega é {endereco}. Está tudo certo? \nSe sim, digite 'confirmar' para finalizar o pedido.\n"
+        }
+      ]
+    },
+    "actions": [
+      "utter_pedir_pizza",
+      "utter_consultar_horario",
+      "utter_consultar_entrega",
+      "utter_consultar_cardapio",
+      "utter_consultar_pagamento",
+      "utter_consultar_promocao",
+      "utter_duvida_geral",
+      "utter_alterar_pedido",
+      "utter_cancelar_pedido",
+      "utter_confirmar_pedido",
+      "utter_endereco_confirmado",
+      "utter_agradecimento"
+    ],
+    "session_config": {
+      "session_expiration_time": 60,
+      "carry_over_slots_to_new_session": true
+    }
+  },
+  "trained_at": "2025-04-06T18:17:35.076446",
+  "model_id": "e4b2082f3d9a4e84b5001341d47b5a3c",
+  "assistant_id": "20250406-163403-deafening-acacia",
+  "rasa_open_source_version": "3.6.21",
+  "train_schema": {
+    "nodes": {
+      "schema_validator": {
+        "needs": {
+          "importer": "__importer__"
+        },
+        "uses": "rasa.graph_components.validators.default_recipe_validator.DefaultV1RecipeValidator",
+        "constructor_name": "create",
+        "fn": "validate",
+        "config": {},
+        "eager": false,
+        "is_target": false,
+        "is_input": true,
+        "resource": null
+      },
+      "finetuning_validator": {
+        "needs": {
+          "importer": "schema_validator"
+        },
+        "uses": "rasa.graph_components.validators.finetuning_validator.FinetuningValidator",
+        "constructor_name": "create",
+        "fn": "validate",
+        "config": {
+          "validate_core": true,
+          "validate_nlu": true
+        },
+        "eager": false,
+        "is_target": false,
+        "is_input": true,
+        "resource": null
+      },
+      "nlu_training_data_provider": {
+        "needs": {
+          "importer": "finetuning_validator"
+        },
+        "uses": "rasa.graph_components.providers.nlu_training_data_provider.NLUTrainingDataProvider",
+        "constructor_name": "create",
+        "fn": "provide",
+        "config": {
+          "language": "pt",
+          "persist": false
+        },
+        "eager": false,
+        "is_target": false,
+        "is_input": true,
+        "resource": null
+      },
+      "run_WhitespaceTokenizer0": {
+        "needs": {
+          "training_data": "nlu_training_data_provider"
+        },
+        "uses": "rasa.nlu.tokenizers.whitespace_tokenizer.WhitespaceTokenizer",
+        "constructor_name": "load",
+        "fn": "process_training_data",
+        "config": {},
+        "eager": false,
+        "is_target": false,
+        "is_input": false,
+        "resource": null
+      },
+      "train_RegexFeaturizer1": {
+        "needs": {
+          "training_data": "run_WhitespaceTokenizer0"
+        },
+        "uses": "rasa.nlu.featurizers.sparse_featurizer.regex_featurizer.RegexFeaturizer",
+        "constructor_name": "create",
+        "fn": "train",
+        "config": {},
+        "eager": false,
+        "is_target": true,
+        "is_input": false,
+        "resource": null
+      },
+      "run_RegexFeaturizer1": {
+        "needs": {
+          "training_data": "run_WhitespaceTokenizer0",
+          "resource": "train_RegexFeaturizer1"
+        },
+        "uses": "rasa.nlu.featurizers.sparse_featurizer.regex_featurizer.RegexFeaturizer",
+        "constructor_name": "load",
+        "fn": "process_training_data",
+        "config": {},
+        "eager": false,
+        "is_target": false,
+        "is_input": false,
+        "resource": null
+      },
+      "train_LexicalSyntacticFeaturizer2": {
+        "needs": {
+          "training_data": "run_RegexFeaturizer1"
+        },
+        "uses": "rasa.nlu.featurizers.sparse_featurizer.lexical_syntactic_featurizer.LexicalSyntacticFeaturizer",
+        "constructor_name": "create",
+        "fn": "train",
+        "config": {},
+        "eager": false,
+        "is_target": true,
+        "is_input": false,
+        "resource": null
+      },
+      "run_LexicalSyntacticFeaturizer2": {
+        "needs": {
+          "training_data": "run_RegexFeaturizer1",
+          "resource": "train_LexicalSyntacticFeaturizer2"
+        },
+        "uses": "rasa.nlu.featurizers.sparse_featurizer.lexical_syntactic_featurizer.LexicalSyntacticFeaturizer",
+        "constructor_name": "load",
+        "fn": "process_training_data",
+        "config": {},
+        "eager": false,
+        "is_target": false,
+        "is_input": false,
+        "resource": null
+      },
+      "train_CountVectorsFeaturizer3": {
+        "needs": {
+          "training_data": "run_LexicalSyntacticFeaturizer2"
+        },
+        "uses": "rasa.nlu.featurizers.sparse_featurizer.count_vectors_featurizer.CountVectorsFeaturizer",
+        "constructor_name": "create",
+        "fn": "train",
+        "config": {},
+        "eager": false,
+        "is_target": true,
+        "is_input": false,
+        "resource": null
+      },
+      "run_CountVectorsFeaturizer3": {
+        "needs": {
+          "training_data": "run_LexicalSyntacticFeaturizer2",
+          "resource": "train_CountVectorsFeaturizer3"
+        },
+        "uses": "rasa.nlu.featurizers.sparse_featurizer.count_vectors_featurizer.CountVectorsFeaturizer",
+        "constructor_name": "load",
+        "fn": "process_training_data",
+        "config": {},
+        "eager": false,
+        "is_target": false,
+        "is_input": false,
+        "resource": null
+      },
+      "train_CountVectorsFeaturizer4": {
+        "needs": {
+          "training_data": "run_CountVectorsFeaturizer3"
+        },
+        "uses": "rasa.nlu.featurizers.sparse_featurizer.count_vectors_featurizer.CountVectorsFeaturizer",
+        "constructor_name": "create",
+        "fn": "train",
+        "config": {
+          "analyzer": "char_wb",
+          "min_ngram": 1,
+          "max_ngram": 4
+        },
+        "eager": false,
+        "is_target": true,
+        "is_input": false,
+        "resource": null
+      },
+      "run_CountVectorsFeaturizer4": {
+        "needs": {
+          "training_data": "run_CountVectorsFeaturizer3",
+          "resource": "train_CountVectorsFeaturizer4"
+        },
+        "uses": "rasa.nlu.featurizers.sparse_featurizer.count_vectors_featurizer.CountVectorsFeaturizer",
+        "constructor_name": "load",
+        "fn": "process_training_data",
+        "config": {
+          "analyzer": "char_wb",
+          "min_ngram": 1,
+          "max_ngram": 4
+        },
+        "eager": false,
+        "is_target": false,
+        "is_input": false,
+        "resource": null
+      },
+      "train_DIETClassifier5": {
+        "needs": {
+          "training_data": "run_CountVectorsFeaturizer4"
+        },
+        "uses": "rasa.nlu.classifiers.diet_classifier.DIETClassifier",
+        "constructor_name": "create",
+        "fn": "train",
+        "config": {
+          "epochs": 100
+        },
+        "eager": false,
+        "is_target": true,
+        "is_input": false,
+        "resource": null
+      },
+      "train_EntitySynonymMapper6": {
+        "needs": {
+          "training_data": "run_CountVectorsFeaturizer4"
+        },
+        "uses": "rasa.nlu.extractors.entity_synonyms.EntitySynonymMapper",
+        "constructor_name": "create",
+        "fn": "train",
+        "config": {},
+        "eager": false,
+        "is_target": true,
+        "is_input": false,
+        "resource": null
+      },
+      "train_ResponseSelector7": {
+        "needs": {
+          "training_data": "run_CountVectorsFeaturizer4"
+        },
+        "uses": "rasa.nlu.selectors.response_selector.ResponseSelector",
+        "constructor_name": "create",
+        "fn": "train",
+        "config": {
+          "epochs": 100
+        },
+        "eager": false,
+        "is_target": true,
+        "is_input": false,
+        "resource": null
+      },
+      "domain_provider": {
+        "needs": {
+          "importer": "finetuning_validator"
+        },
+        "uses": "rasa.graph_components.providers.domain_provider.DomainProvider",
+        "constructor_name": "create",
+        "fn": "provide_train",
+        "config": {},
+        "eager": false,
+        "is_target": true,
+        "is_input": true,
+        "resource": null
+      },
+      "domain_for_core_training_provider": {
+        "needs": {
+          "domain": "domain_provider"
+        },
+        "uses": "rasa.graph_components.providers.domain_for_core_training_provider.DomainForCoreTrainingProvider",
+        "constructor_name": "create",
+        "fn": "provide",
+        "config": {},
+        "eager": false,
+        "is_target": false,
+        "is_input": true,
+        "resource": null
+      },
+      "forms_provider": {
+        "needs": {
+          "domain": "domain_provider"
+        },
+        "uses": "rasa.graph_components.providers.forms_provider.FormsProvider",
+        "constructor_name": "create",
+        "fn": "provide",
+        "config": {},
+        "eager": false,
+        "is_target": false,
+        "is_input": true,
+        "resource": null
+      },
+      "responses_provider": {
+        "needs": {
+          "domain": "domain_provider"
+        },
+        "uses": "rasa.graph_components.providers.responses_provider.ResponsesProvider",
+        "constructor_name": "create",
+        "fn": "provide",
+        "config": {},
+        "eager": false,
+        "is_target": false,
+        "is_input": true,
+        "resource": null
+      },
+      "story_graph_provider": {
+        "needs": {
+          "importer": "finetuning_validator"
+        },
+        "uses": "rasa.graph_components.providers.story_graph_provider.StoryGraphProvider",
+        "constructor_name": "create",
+        "fn": "provide",
+        "config": {
+          "exclusion_percentage": null
+        },
+        "eager": false,
+        "is_target": false,
+        "is_input": true,
+        "resource": null
+      },
+      "training_tracker_provider": {
+        "needs": {
+          "story_graph": "story_graph_provider",
+          "domain": "domain_for_core_training_provider"
+        },
+        "uses": "rasa.graph_components.providers.training_tracker_provider.TrainingTrackerProvider",
+        "constructor_name": "create",
+        "fn": "provide",
+        "config": {
+          "debug_plots": false,
+          "augmentation_factor": 50
+        },
+        "eager": false,
+        "is_target": false,
+        "is_input": false,
+        "resource": null
+      },
+      "train_MemoizationPolicy0": {
+        "needs": {
+          "domain": "domain_for_core_training_provider",
+          "training_trackers": "training_tracker_provider"
+        },
+        "uses": "rasa.core.policies.memoization.MemoizationPolicy",
+        "constructor_name": "create",
+        "fn": "train",
+        "config": {},
+        "eager": false,
+        "is_target": true,
+        "is_input": false,
+        "resource": null
+      },
+      "train_TEDPolicy1": {
+        "needs": {
+          "domain": "domain_for_core_training_provider",
+          "training_trackers": "training_tracker_provider"
+        },
+        "uses": "rasa.core.policies.ted_policy.TEDPolicy",
+        "constructor_name": "create",
+        "fn": "train",
+        "config": {
+          "max_history": 5,
+          "epochs": 100
+        },
+        "eager": false,
+        "is_target": true,
+        "is_input": false,
+        "resource": null
+      },
+      "train_RulePolicy2": {
+        "needs": {
+          "domain": "domain_for_core_training_provider",
+          "training_trackers": "training_tracker_provider"
+        },
+        "uses": "rasa.core.policies.rule_policy.RulePolicy",
+        "constructor_name": "create",
+        "fn": "train",
+        "config": {},
+        "eager": false,
+        "is_target": true,
+        "is_input": false,
+        "resource": null
+      }
+    }
+  },
+  "predict_schema": {
+    "nodes": {
+      "nlu_message_converter": {
+        "needs": {
+          "messages": "__message__"
+        },
+        "uses": "rasa.graph_components.converters.nlu_message_converter.NLUMessageConverter",
+        "constructor_name": "load",
+        "fn": "convert_user_message",
+        "config": {},
+        "eager": true,
+        "is_target": false,
+        "is_input": false,
+        "resource": null
+      },
+      "run_WhitespaceTokenizer0": {
+        "needs": {
+          "messages": "nlu_message_converter"
+        },
+        "uses": "rasa.nlu.tokenizers.whitespace_tokenizer.WhitespaceTokenizer",
+        "constructor_name": "load",
+        "fn": "process",
+        "config": {},
+        "eager": true,
+        "is_target": false,
+        "is_input": false,
+        "resource": null
+      },
+      "run_RegexFeaturizer1": {
+        "needs": {
+          "messages": "run_WhitespaceTokenizer0"
+        },
+        "uses": "rasa.nlu.featurizers.sparse_featurizer.regex_featurizer.RegexFeaturizer",
+        "constructor_name": "load",
+        "fn": "process",
+        "config": {},
+        "eager": true,
+        "is_target": false,
+        "is_input": false,
+        "resource": {
+          "name": "train_RegexFeaturizer1",
+          "output_fingerprint": "fc3f2e58639149f48ec9656c8e2dca9b"
+        }
+      },
+      "run_LexicalSyntacticFeaturizer2": {
+        "needs": {
+          "messages": "run_RegexFeaturizer1"
+        },
+        "uses": "rasa.nlu.featurizers.sparse_featurizer.lexical_syntactic_featurizer.LexicalSyntacticFeaturizer",
+        "constructor_name": "load",
+        "fn": "process",
+        "config": {},
+        "eager": true,
+        "is_target": false,
+        "is_input": false,
+        "resource": {
+          "name": "train_LexicalSyntacticFeaturizer2",
+          "output_fingerprint": "900eebe8bccc4c4e83faa839740861a6"
+        }
+      },
+      "run_CountVectorsFeaturizer3": {
+        "needs": {
+          "messages": "run_LexicalSyntacticFeaturizer2"
+        },
+        "uses": "rasa.nlu.featurizers.sparse_featurizer.count_vectors_featurizer.CountVectorsFeaturizer",
+        "constructor_name": "load",
+        "fn": "process",
+        "config": {},
+        "eager": true,
+        "is_target": false,
+        "is_input": false,
+        "resource": {
+          "name": "train_CountVectorsFeaturizer3",
+          "output_fingerprint": "4bcbac06df1745b08f6ac715da472d7f"
+        }
+      },
+      "run_CountVectorsFeaturizer4": {
+        "needs": {
+          "messages": "run_CountVectorsFeaturizer3"
+        },
+        "uses": "rasa.nlu.featurizers.sparse_featurizer.count_vectors_featurizer.CountVectorsFeaturizer",
+        "constructor_name": "load",
+        "fn": "process",
+        "config": {
+          "analyzer": "char_wb",
+          "min_ngram": 1,
+          "max_ngram": 4
+        },
+        "eager": true,
+        "is_target": false,
+        "is_input": false,
+        "resource": {
+          "name": "train_CountVectorsFeaturizer4",
+          "output_fingerprint": "d122675f8f9f45c7b7fdca617b6a81d8"
+        }
+      },
+      "run_DIETClassifier5": {
+        "needs": {
+          "messages": "run_CountVectorsFeaturizer4"
+        },
+        "uses": "rasa.nlu.classifiers.diet_classifier.DIETClassifier",
+        "constructor_name": "load",
+        "fn": "process",
+        "config": {
+          "epochs": 100
+        },
+        "eager": true,
+        "is_target": false,
+        "is_input": false,
+        "resource": {
+          "name": "train_DIETClassifier5",
+          "output_fingerprint": "6f0fb2b3c30c4f80914bcb40da116057"
+        }
+      },
+      "run_EntitySynonymMapper6": {
+        "needs": {
+          "messages": "run_DIETClassifier5"
+        },
+        "uses": "rasa.nlu.extractors.entity_synonyms.EntitySynonymMapper",
+        "constructor_name": "load",
+        "fn": "process",
+        "config": {},
+        "eager": true,
+        "is_target": false,
+        "is_input": false,
+        "resource": {
+          "name": "train_EntitySynonymMapper6",
+          "output_fingerprint": "6597ec346404456f8ae380bd19754a0f"
+        }
+      },
+      "run_ResponseSelector7": {
+        "needs": {
+          "messages": "run_EntitySynonymMapper6"
+        },
+        "uses": "rasa.nlu.selectors.response_selector.ResponseSelector",
+        "constructor_name": "load",
+        "fn": "process",
+        "config": {
+          "epochs": 100
+        },
+        "eager": true,
+        "is_target": false,
+        "is_input": false,
+        "resource": {
+          "name": "train_ResponseSelector7",
+          "output_fingerprint": "ab73c208927c4b9588d822631fe9bab7"
+        }
+      },
+      "run_FallbackClassifier8": {
+        "needs": {
+          "messages": "run_ResponseSelector7"
+        },
+        "uses": "rasa.nlu.classifiers.fallback_classifier.FallbackClassifier",
+        "constructor_name": "load",
+        "fn": "process",
+        "config": {
+          "threshold": 0.3,
+          "ambiguity_threshold": 0.1
+        },
+        "eager": true,
+        "is_target": false,
+        "is_input": false,
+        "resource": null
+      },
+      "run_RegexMessageHandler": {
+        "needs": {
+          "messages": "run_FallbackClassifier8",
+          "domain": "domain_provider"
+        },
+        "uses": "rasa.nlu.classifiers.regex_message_handler.RegexMessageHandler",
+        "constructor_name": "load",
+        "fn": "process",
+        "config": {},
+        "eager": true,
+        "is_target": false,
+        "is_input": false,
+        "resource": null
+      },
+      "domain_provider": {
+        "needs": {},
+        "uses": "rasa.graph_components.providers.domain_provider.DomainProvider",
+        "constructor_name": "load",
+        "fn": "provide_inference",
+        "config": {},
+        "eager": true,
+        "is_target": false,
+        "is_input": false,
+        "resource": {
+          "name": "domain_provider",
+          "output_fingerprint": "89f3ee483df849cfa099e01c6a09df57"
+        }
+      },
+      "run_MemoizationPolicy0": {
+        "needs": {
+          "domain": "domain_provider",
+          "tracker": "__tracker__",
+          "rule_only_data": "rule_only_data_provider"
+        },
+        "uses": "rasa.core.policies.memoization.MemoizationPolicy",
+        "constructor_name": "load",
+        "fn": "predict_action_probabilities",
+        "config": {},
+        "eager": true,
+        "is_target": false,
+        "is_input": false,
+        "resource": {
+          "name": "train_MemoizationPolicy0",
+          "output_fingerprint": "23673a0acd1143f4bb26f41011ca03af"
+        }
+      },
+      "run_TEDPolicy1": {
+        "needs": {
+          "domain": "domain_provider",
+          "rule_only_data": "rule_only_data_provider",
+          "tracker": "__tracker__"
+        },
+        "uses": "rasa.core.policies.ted_policy.TEDPolicy",
+        "constructor_name": "load",
+        "fn": "predict_action_probabilities",
+        "config": {
+          "max_history": 5,
+          "epochs": 100
+        },
+        "eager": true,
+        "is_target": false,
+        "is_input": false,
+        "resource": {
+          "name": "train_TEDPolicy1",
+          "output_fingerprint": "ca2ca8ec3a9b4fe39c1787548dc83f32"
+        }
+      },
+      "run_RulePolicy2": {
+        "needs": {
+          "domain": "domain_provider",
+          "tracker": "__tracker__",
+          "rule_only_data": "rule_only_data_provider"
+        },
+        "uses": "rasa.core.policies.rule_policy.RulePolicy",
+        "constructor_name": "load",
+        "fn": "predict_action_probabilities",
+        "config": {},
+        "eager": true,
+        "is_target": false,
+        "is_input": false,
+        "resource": {
+          "name": "train_RulePolicy2",
+          "output_fingerprint": "93406b5aa9b44873939b848986c946f4"
+        }
+      },
+      "rule_only_data_provider": {
+        "needs": {},
+        "uses": "rasa.graph_components.providers.rule_only_provider.RuleOnlyDataProvider",
+        "constructor_name": "load",
+        "fn": "provide",
+        "config": {},
+        "eager": true,
+        "is_target": false,
+        "is_input": false,
+        "resource": {
+          "name": "train_RulePolicy2",
+          "output_fingerprint": "7c75108ec6374b0e9e1600232b6fee66"
+        }
+      },
+      "select_prediction": {
+        "needs": {
+          "policy0": "run_MemoizationPolicy0",
+          "policy1": "run_TEDPolicy1",
+          "policy2": "run_RulePolicy2",
+          "domain": "domain_provider",
+          "tracker": "__tracker__"
+        },
+        "uses": "rasa.core.policies.ensemble.DefaultPolicyPredictionEnsemble",
+        "constructor_name": "load",
+        "fn": "combine_predictions_from_kwargs",
+        "config": {},
+        "eager": true,
+        "is_target": false,
+        "is_input": false,
+        "resource": null
+      }
+    }
+  },
+  "training_type": 3,
+  "project_fingerprint": "9eda891dc63b23d2a0772680b45d827406ebbc32912b8fc6935a87822cad9d2d",
+  "core_target": "select_prediction",
+  "nlu_target": "run_RegexMessageHandler",
+  "language": "pt",
+  "spaces": null
+}

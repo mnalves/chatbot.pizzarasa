@@ -1,0 +1,40 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"consultar_cardapio\"}}]": "utter_cardapio_completo",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"consultar_cardapio\"}}, {\"prev_action\": {\"action_name\": \"utter_cardapio_completo\"}, \"user\": {\"intent\": \"consultar_cardapio\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"consultar_horario\"}}]": "utter_consultar_horario",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"consultar_horario\"}}, {\"prev_action\": {\"action_name\": \"utter_consultar_horario\"}, \"user\": {\"intent\": \"consultar_horario\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"duvida_geral\"}}]": "utter_duvida_geral",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"duvida_geral\"}}, {\"prev_action\": {\"action_name\": \"utter_duvida_geral\"}, \"user\": {\"intent\": \"duvida_geral\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"confirmar_pedido\"}}]": "utter_confirmar_pedido",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"confirmar_pedido\"}}, {\"prev_action\": {\"action_name\": \"utter_confirmar_pedido\"}, \"user\": {\"intent\": \"confirmar_pedido\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"consultar_entrega\"}}]": "utter_consultar_entrega",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"consultar_entrega\"}}, {\"prev_action\": {\"action_name\": \"utter_consultar_entrega\"}, \"user\": {\"intent\": \"consultar_entrega\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"consultar_promocao\"}}]": "utter_promocao",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"consultar_promocao\"}}, {\"prev_action\": {\"action_name\": \"utter_promocao\"}, \"user\": {\"intent\": \"consultar_promocao\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"cancelar_pedido\"}}]": "utter_cancelar_pedido",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"cancelar_pedido\"}}, {\"prev_action\": {\"action_name\": \"utter_cancelar_pedido\"}, \"user\": {\"intent\": \"cancelar_pedido\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"pedir_pizza\"}}]": "utter_pedir_pizza",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"pedir_pizza\"}}, {\"prev_action\": {\"action_name\": \"utter_pedir_pizza\"}, \"user\": {\"intent\": \"pedir_pizza\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"consultar_pizzas_doces\"}}]": "utter_cardapio_completo",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"consultar_pizzas_doces\"}}, {\"prev_action\": {\"action_name\": \"utter_cardapio_completo\"}, \"user\": {\"intent\": \"consultar_pizzas_doces\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"coletar_endereco\"}}]": "utter_coletar_endereco",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"coletar_endereco\"}}, {\"prev_action\": {\"action_name\": \"utter_coletar_endereco\"}, \"user\": {\"intent\": \"coletar_endereco\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"consultar_bebidas\"}}]": "utter_cardapio_completo",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"consultar_bebidas\"}}, {\"prev_action\": {\"action_name\": \"utter_cardapio_completo\"}, \"user\": {\"intent\": \"consultar_bebidas\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"alterar_pedido\"}}]": "utter_alterar_pedido",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"alterar_pedido\"}}, {\"prev_action\": {\"action_name\": \"utter_alterar_pedido\"}, \"user\": {\"intent\": \"alterar_pedido\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"consultar_pagamento\"}}]": "utter_consultar_pagamento",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"consultar_pagamento\"}}, {\"prev_action\": {\"action_name\": \"utter_consultar_pagamento\"}, \"user\": {\"intent\": \"consultar_pagamento\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {},
+    "rules_not_in_stories": [
+      "predicting default action with intent session_start",
+      "predicting default action with intent back",
+      "predicting default action with intent restart"
+    ]
+  }
+}
