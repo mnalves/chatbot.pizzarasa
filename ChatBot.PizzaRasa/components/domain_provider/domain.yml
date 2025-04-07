@@ -13,7 +13,8 @@ intents:
   - cancelar_pedido
   - coletar_endereco
   - confirmar_pedido
-  - endereco_confirmado 
+
+
 
 entities:
   - sabor
@@ -21,6 +22,7 @@ entities:
   - quantidade
   - bairro
   - pagamento
+  - endereço
 
 
 
@@ -55,12 +57,7 @@ slots:
     mappings:
       - type: from_entity
         entity: pagamento
-    
-  pedido:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: pedido
+  
     
   endereço:
     type: text
@@ -68,12 +65,12 @@ slots:
       - type: from_entity
         entity: endereço
 
-responses:
-  utter_agradecimento:
-    - text: "Obrigado pelo pedido! Sua pizza já está sendo preparada! 🍕"
 
-  utter_erro:
-    - text: "Ops, não entendi muito bem. Pode repetir, por favor?"
+
+responses:
+
+  utter_saudar:
+    - text: "Oláá!Como posso te ajudar? Será um prazer em lhe atender. "
 
   utter_pedir_pizza:
     - text: "Claro! Qual sabor, tamanho e quantidade você gostaria?"
@@ -181,6 +178,11 @@ responses:
         📦 O seu endereço de entrega é {endereco}. Está tudo certo? 
         Se sim, digite 'confirmar' para finalizar o pedido.
 
+
+  utter_confirmar:
+    - text: |
+        🎉 Pedido confirmado! Sua pizza está a caminho. Obrigado por pedir com a gente! 🍕🚀
+
 actions:
     - utter_saudar
     - utter_pedir_pizza
@@ -191,9 +193,10 @@ actions:
     - utter_promocao
     - utter_duvida_geral
     - utter_alterar_pedido
+    - utter_coletar_endereco
     - utter_cancelar_pedido
     - utter_confirmar_pedido  
-    - utter_endereco_confirmado  
+    - utter_confirmar
     
   
 session_config:
